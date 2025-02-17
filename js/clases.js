@@ -60,16 +60,17 @@ class Catalogo {
     }
 
     addProducto(idProducto, nombreProducto, precioUnidad, idCategoria) {
-        for (let producto of this.#productos) {
-            if (producto.idProducto === idProducto) {
-                return "Producto ya añadido";
-            }
+        const productoExistente = this.#productos.find(producto => producto.idProducto === idProducto);
+    
+        if (productoExistente) {
+            return "Producto ya añadido";
         }
-
+    
         const p1 = new Producto(idProducto, nombreProducto, precioUnidad, idCategoria);
         this.#productos.push(p1);
         return "Producto añadido correctamente";
     }
+    
 }
 
 
@@ -104,9 +105,53 @@ class Cuenta{
     _mesa;
     _lineasDeCuentas;
     _pagada;
+
+    constructor (mesa, lineasDeCuentas, pagada){
+        this.mesa= mesa
+        this.lineasDeCuentas =lineasDeCuentas
+        this.pagada = pagada
+    }
+
+    get pagada() {
+        return this._pagada;
+    }
+    set pagada(value) {
+        this._pagada = value;
+    }
+    get lineasDeCuentas() {
+        return this._lineasDeCuentas;
+    }
+    set lineasDeCuentas(value) {
+        this._lineasDeCuentas = value;
+    }
     
+    get mesa_1() {
+        return this._mesa;
+    }
+    set mesa_1(value) {
+        this._mesa = value;
+    } 
 }
 
 class Gestor{
+    _cuentas;
+    _mesaActual;
+
+    constructor(){
+        this.mesaActual =  1
+    }
+
+    get cuentas() {
+        return this._cuentas;
+    }
+    set cuentas(value) {
+        this._cuentas = value;
+    }
     
+    get mesaActual() {
+        return this._mesaActual;
+    }
+    set mesaActual(value) {
+        this._mesaActual = value;
+    }
 }
