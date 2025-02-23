@@ -102,56 +102,57 @@ class LineaCuenta {
 
 
 class Cuenta{
-    _mesa;
-    _lineasDeCuentas;
-    _pagada;
+    #mesa;
+    #lineasDeCuentas;
+    #pagada;
 
-    constructor (mesa, lineasDeCuentas, pagada){
-        this.mesa= mesa
-        this.lineasDeCuentas =lineasDeCuentas
-        this.pagada = pagada
+    constructor (mesa, pagada){
+        this.#mesa= mesa
+        this.#lineasDeCuentas = []
+        this.#pagada = pagada
     }
 
     get pagada() {
-        return this._pagada;
+        return this.#pagada;
     }
     set pagada(value) {
-        this._pagada = value;
+        this.#pagada = value;
     }
     get lineasDeCuentas() {
-        return this._lineasDeCuentas;
+        return this.#lineasDeCuentas;
     }
     set lineasDeCuentas(value) {
-        this._lineasDeCuentas = value;
+        this.#lineasDeCuentas = value;
     }
     
-    get mesa_1() {
-        return this._mesa;
+    get mesa() {
+        return this.#mesa;
     }
-    set mesa_1(value) {
-        this._mesa = value;
+    set mesa(value) {
+        this.#mesa = value;
     } 
 }
 
 class Gestor{
-    _cuentas;
-    _mesaActual;
+    #cuentas;
+    #mesaActual;
 
     constructor(){
-        this.mesaActual =  1
+        this.#mesaActual =  1;
+        this.#cuentas = [];
     }
 
     get cuentas() {
-        return this._cuentas;
+        return this.#cuentas;
     }
     set cuentas(value) {
-        this._cuentas = value;
+        this.#cuentas = value;
     }
     
     get mesaActual() {
-        return this._mesaActual;
+        return this.#mesaActual;
     }
     set mesaActual(value) {
-        this._mesaActual = value;
+        this.#mesaActual = value;
     }
 }
