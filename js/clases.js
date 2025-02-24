@@ -106,10 +106,10 @@ class Cuenta{
     #lineasDeCuentas;
     #pagada;
 
-    constructor (mesa, pagada){
-        this.#mesa= mesa
-        this.#lineasDeCuentas = []
-        this.#pagada = pagada
+    constructor (mesa){
+        this.#mesa= mesa;
+        this.#lineasDeCuentas = [];
+        this.#pagada = false;
     }
 
     get pagada() {
